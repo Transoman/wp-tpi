@@ -1,0 +1,87 @@
+.btn
+  display: inline-block
+  vertical-align: middle
+  padding: vw(28) vw(60)
+  font-family: $main-font
+  +fluid-type(8px, 26px)
+  font-weight: 700
+  color: #fff
+  text-align: center
+  background-color: $natural-gray
+  border: 0
+  outline: none
+  text-decoration: none
+  cursor: pointer
+  user-select: none
+  transition: all .25s ease
+  +xs-block
+    padding: vw-xs(10) vw-xs(14)
+  &:hover
+    background-color: lighten(#000, 5%)
+    color: #fff
+  &:focus
+    background-color: darken(#000, 5%)
+    color: #fff
+    outline: none
+  &[disabled]
+    background-color: #e5e5e5
+    cursor: not-allowed
+    color: #fff
+
+.btn-close
+  position: relative
+  padding: 0
+  background: none
+  border: 0
+  width: vw(40)
+  height: vw(40)
+  cursor: pointer
+  +xs-block
+    width: vw-xs(32)
+    height: vw-xs(32)
+  &:focus
+    outline: none
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: 0
+    display: block
+    height: vw(2)
+    width: 100%
+    background: $gray
+    +trans
+    +xs-block
+      width: vw-xs(16)
+      height: 1px
+      left: 50%
+      margin-left: vw-xs(-8)
+  &::after
+    transform: rotate(45deg)
+  &::before
+    transform: rotate(-45deg)
+
+.btn-loading
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    display: inline-block
+    vertical-align: middle
+    width: vw(18)
+    height: vw(18)
+    margin: - vw(9) 0 0 - vw(9)
+    opacity: 1
+    border-radius: 50%
+    border: vw(3) solid transparent
+    border-top: vw(3) solid rgba(255, 255, 255, 1)
+    border-right: vw(3) solid rgba(255, 255, 255, 1)
+    background: transparent
+    animation: 0.5s spin cubic-bezier(0.4, 0, 0.2, 1) infinite
+    +xs-block
+      width: vw-xs(10)
+      height: vw-xs(10)
+      margin: - vw-xs(5) 0 0 - vw-xs(5)
+  .text
+    opacity: 0

@@ -1,0 +1,25 @@
+.icons-box
+  display: flex
+  margin: 0 - vw(25)
+  &__item
+    position: relative
+    flex-grow: 1
+    padding: 0 vw(25)
+    text-align: center
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    height: vw(75)
+    margin-bottom: vw(5)
+    +md-block
+      margin-bottom: vw-md(5)
+    +xs-block
+      height: vw-xs(25)
+      margin-bottom: vw-xs(5)
+    img
+      max-height: 100%
+  &__title
+    margin: 0
+    +fluid-type(7px, 13px)
+    color: #fff

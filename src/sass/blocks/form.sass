@@ -1,0 +1,94 @@
+.form-group
+  position: relative
+  margin-bottom: vw(60)
+  +xs-block
+    margin-bottom: vw-xs(30)
+  &--terms
+    .wpcf7-list-item
+      margin: 0
+  &--btn
+    margin-bottom: 0
+.form-row
+  position: relative
+.form-field
+  width: 100%
+  padding: 0
+  border: 0
+  border-bottom: vw(2) solid $tuatara
+  border-radius: 0
+  font-weight: 300
+  box-shadow: none
+  appearance: none
+  color: $tuatara
+  &::placeholder
+    color: inherit
+  &:focus
+    outline: none
+    border-color: #000
+textarea.form-field
+  height: vw(100)
+
+.form-file
+  input[type="file"]
+    @extend .visually-hidden
+  &__name
+    display: block
+    @extend .form-field
+
+.check
+  &__input
+    @extend .visually-hidden
+    &:checked + span
+      &::after
+        opacity: 1
+    & + span
+      position: relative
+      display: block
+      padding-left: vw(35)
+      +fluid-type(7px, 20px)
+      color: $tuatara
+      cursor: pointer
+      +xs-block
+        padding-left: vw-xs(17)
+      &::before
+        content: ''
+        position: absolute
+        top: vw(7)
+        left: 0
+        width: vw(20)
+        height: vw(20)
+        border: vw(2) solid $tuatara
+        border-radius: 50%
+        +xs-block
+          width: vw-xs(10)
+          height: vw-xs(10)
+          left: 1px
+      &::after
+        content: ''
+        position: absolute
+        top: vw(12)
+        left: vw(5)
+        width: vw(10)
+        height: vw(10)
+        background-color: $tuatara
+        border-radius: 50%
+        opacity: 0
+        +trans
+        +xs-block
+          top: vw-xs(4)
+          left: vw-xs(4)
+          width: vw-xs(4)
+          height: vw-xs(4)
+      a
+        color: inherit
+        text-decoration: underline
+        &:hover, &:focus
+          color: #000
+          text-decoration: none
+
+span.wpcf7-not-valid-tip
+  position: absolute
+  +fluid-type(7px, 24px)
+
+.wpcf7-response-output
+  display: none !important

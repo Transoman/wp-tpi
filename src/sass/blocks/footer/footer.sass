@@ -1,0 +1,34 @@
+.footer
+  padding: vw(100) 0 vw(65)
+  background-color: $gray
+  color: #fff
+  +xs-block
+    padding: vw-xs(30) 0 vw-xs(20)
+  .row
+    align-items: flex-end
+  &__copy
+    +col
+    +size(3)
+    +size-xs(8)
+    font-family: $dms-font
+    +fluid-type(11px, 44px)
+    letter-spacing: -0.05em
+    +xs-block
+      margin-bottom: vw-xs(20)
+  &__contact-block
+    +col
+    +size(3)
+    +shift-left(1)
+    +size-xs(8)
+    +xs-block
+      margin-left: 15px
+      margin-bottom: vw-xs(15)
+  &__logo
+    +col
+    +size(1)
+    +size-xs(8)
+    text-align: right
+    +xs-block
+      text-align: left
+    img
+      max-width: vw(100)

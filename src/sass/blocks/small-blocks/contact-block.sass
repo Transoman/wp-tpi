@@ -1,0 +1,16 @@
+.contact-block
+  color: #fff
+  p
+    margin: 0
+  a
+    color: inherit
+    text-decoration: underline
+    &:hover, &:focus
+      color: rgba(#fff, 0.8)
+      text-decoration: none
+  &__social
+    margin-top: 2.5rem
+    & > *:not(:last-child)
+      margin-right: vw(15)
+      +xs-block
+        margin-right: vw-xs(5)

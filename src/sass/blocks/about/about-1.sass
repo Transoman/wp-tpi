@@ -1,0 +1,36 @@
+.about-1
+  position: relative
+  padding-top: vw(290)
+  padding-bottom: vw(190)
+  &::before
+    content: ''
+    position: absolute
+    left: calc(50% - 1px)
+    top: 0
+    width: 2px
+    height: vw(195)
+    background-color: $gray
+    +xs-block
+      width: 1px
+  &__left
+    +col
+    +size(4)
+    +size-xs(8)
+    padding-right: vw(170)
+    +xs-block
+      padding-right: vw-xs(80)
+    p
+      margin-bottom: vw(25)
+      +xs-block
+        margin-bottom: vw-xs(5)
+      &:last-child
+        margin-bottom: 0
+  &__right
+    +col
+    +size(3)
+    +size-xl(4)
+    +xs-block
+      display: none
+    img
+      +md-block
+        width: 100%

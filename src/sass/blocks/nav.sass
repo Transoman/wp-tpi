@@ -1,0 +1,158 @@
+.nav
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 10
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  overflow: hidden
+  transform: translateZ(0)
+  pointer-events: none
+  +smooth-scroll
+  +trans
+  &::after, &::before
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 500vw
+    transform-origin: bottom left
+    will-change: transform
+    transition: 1s ease
+    transform: rotate(90deg)
+    backface-visibility: hidden
+  &::before
+    background: $main-color
+    transition-delay: .08s
+  &::after
+    background: $gray
+    transition-delay: 0s
+  &.open
+    pointer-events: inherit
+    &::before
+      transition-delay: 0s
+    &::after, &::before
+      transform: rotate(0deg)
+    &::after
+      transition-delay: .1s
+    .nav__wrap
+      opacity: 1
+      visibility: visible
+      transition-delay: .5s
+  &__wrap
+    max-width: 91.14vw
+    width: 100%
+    visibility: hidden
+    opacity: 0
+    position: relative
+    z-index: 3
+    +trans
+    +rh(800)
+      max-height: 70vh
+      overflow-y: auto
+      overflow-x: hidden
+    @media only screen and (max-height: 800px) and (max-width: 480px)
+      max-height: 80vh !important
+  &__left
+    +col
+    +size(4)
+    +size-md(3)
+    .icons-box
+      display: inline-flex
+      flex-direction: column
+      margin: 0
+      .icons-box
+        &__item
+          padding: 0
+          margin-bottom: vw(60)
+          &:last-child
+            margin-bottom: 0
+  &__right
+    +col
+    +size(4)
+    +size-md(5)
+  &__list-wrap
+    margin-bottom: vw(140)
+    +r(480)
+      margin-bottom: vw-xs(200)
+
+.nav-list
+  margin: 0
+  padding: 0
+  list-style: none
+  a
+    font-family: $dms-font
+    +fluid-type(28px, 94px)
+    color: #fff
+    line-height: 1
+    &:hover, &:focus
+      color: $light-gray
+
+.nav-toggle
+  position: absolute
+  right: 5.5rem
+  top: 50%
+  transform: translateY(-50%)
+  width: vw(40)
+  height: vw(40)
+  padding: 0
+  margin: 0
+  outline: none
+  border: none
+  background: none
+  z-index: 11
+  cursor: pointer
+  +xs-block
+    right: 0.2rem
+    width: vw-xs(32)
+    height: vw-xs(32)
+  &:hover
+    .nav-toggle__line
+      background-color: rgba(#fff, 0.8)
+      &::before, &:after
+        background-color: rgba(#fff, 0.8)
+  &:focus
+    outline: none
+  &__line
+    position: relative
+    display: block
+    height: vw(2)
+    width: 100%
+    background: #fff
+    +trans
+    +xs-block
+      width: vw-xs(16)
+      height: 1px
+      margin: 0 auto
+    &::after, &::before
+      content: ''
+      position: absolute
+      left: 0
+      display: block
+      height: vw(2)
+      width: 100%
+      background: #fff
+      +trans
+      +xs-block
+        height: 1px
+    &::before
+      top: - vw(6)
+      +xs-block
+        top: - vw-xs(2)
+    &::after
+      top: vw(6)
+      +xs-block
+        top: vw-xs(2)
+  &.is-active
+    .nav-toggle__line
+      background: transparent
+      &::after
+        top: 0
+        transform: rotate(45deg)
+      &::before
+        top: 0
+        transform: rotate(-45deg)
