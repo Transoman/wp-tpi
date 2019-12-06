@@ -69,6 +69,8 @@
         &__item
           padding: 0
           margin-bottom: vw(60)
+          @media only screen and (min-width: 1221px) and (max-height: 700px) and (max-width: 1400px)
+            margin-bottom: vw(15)
           &:last-child
             margin-bottom: 0
   &__right
@@ -89,6 +91,8 @@
     +fluid-type(28px, 94px)
     color: #fff
     line-height: 1
+    @media only screen and (min-width: 1221px) and (max-height: 700px) and (max-width: 1400px)
+      font-size: 3.3vw
     &:hover, &:focus
       color: $light-gray
 

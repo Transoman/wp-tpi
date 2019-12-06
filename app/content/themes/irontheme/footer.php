@@ -17,11 +17,11 @@
           <?php endif; ?>
 
           <?php if ($phone): ?>
-            <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>"><?php echo $phone; ?></a></p>
+            <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="link"><?php echo $phone; ?></a></p>
           <?php endif; ?>
 
           <?php if ($email): ?>
-            <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+            <p><a href="mailto:<?php echo $email; ?>" class="link"><?php echo $email; ?></a></p>
           <?php endif; ?>
 
           <?php $instagram = get_field( 'instagram', 'option' );
@@ -30,10 +30,10 @@
           if ($instagram || $linkedin): ?>
             <div class="contact-block__social">
               <?php if ($instagram): ?>
-                <a href="<?php echo esc_url( $instagram ); ?>" target="_blank">Instagram</a>
+                <a href="<?php echo esc_url( $instagram ); ?>" class="link" target="_blank">Instagram</a>
               <?php endif; ?>
               <?php if ($linkedin): ?>
-                <a href="<?php echo esc_url( $linkedin ); ?>" target="_blank">Linkedin</a>
+                <a href="<?php echo esc_url( $linkedin ); ?>" class="link" target="_blank">Linkedin</a>
               <?php endif; ?>
             </div>
           <?php endif; ?>
@@ -114,11 +114,11 @@
             <?php endif; ?>
 
             <?php if ($phone): ?>
-              <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>"><?php echo $phone; ?></a></p>
+              <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="link"><?php echo $phone; ?></a></p>
             <?php endif; ?>
 
             <?php if ($email): ?>
-              <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+              <p><a href="mailto:<?php echo $email; ?>" class="link"><?php echo $email; ?></a></p>
             <?php endif; ?>
 
             <?php $instagram = get_field( 'instagram', 'option' );
@@ -127,10 +127,10 @@
             if ($instagram || $linkedin): ?>
               <div class="contact-block__social">
                 <?php if ($instagram): ?>
-                  <a href="<?php echo esc_url( $instagram ); ?>" target="_blank">Instagram</a>
+                  <a href="<?php echo esc_url( $instagram ); ?>" class="link" target="_blank">Instagram</a>
                 <?php endif; ?>
                 <?php if ($linkedin): ?>
-                  <a href="<?php echo esc_url( $linkedin ); ?>" target="_blank">Linkedin</a>
+                  <a href="<?php echo esc_url( $linkedin ); ?>" class="link" target="_blank">Linkedin</a>
                 <?php endif; ?>
               </div>
             <?php endif; ?>
@@ -171,11 +171,11 @@
           <?php endif; ?>
 
           <?php if ($phone): ?>
-            <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>"><?php echo $phone; ?></a></p>
+            <p>T <a href="tel:<?php echo preg_replace( '![^0-9/+]+!', '', $phone ); ?>" class="link"><?php echo $phone; ?></a></p>
           <?php endif; ?>
 
           <?php if ($email): ?>
-            <p><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
+            <p><a href="mailto:<?php echo $email; ?>" class="link"><?php echo $email; ?></a></p>
           <?php endif; ?>
 
           <?php $instagram = get_field( 'instagram', 'option' );
@@ -184,10 +184,10 @@
           if ($instagram || $linkedin): ?>
             <div class="contact-block__social">
               <?php if ($instagram): ?>
-                <a href="<?php echo esc_url( $instagram ); ?>" target="_blank">Instagram</a>
+                <a href="<?php echo esc_url( $instagram ); ?>" class="link" target="_blank">Instagram</a>
               <?php endif; ?>
               <?php if ($linkedin): ?>
-                <a href="<?php echo esc_url( $linkedin ); ?>" target="_blank">Linkedin</a>
+                <a href="<?php echo esc_url( $linkedin ); ?>" class="link" target="_blank">Linkedin</a>
               <?php endif; ?>
             </div>
           <?php endif; ?>

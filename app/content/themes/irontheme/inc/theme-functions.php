@@ -96,6 +96,7 @@ if ( ! function_exists( 'ith_setup' ) ) :
      * Add custom image size
      */
     add_image_size( 'ith-last-news', 395, 395, true );
+    add_image_size( 'ith-news-card-large', 835, 450, true );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );

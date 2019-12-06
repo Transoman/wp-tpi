@@ -134,7 +134,7 @@ if ( have_rows('home_layout') ):
                   <div class="last-news__body">
                     <h2 class="last-news__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <?php the_excerpt(); ?>
-                    <a href="<?php the_permalink(); ?>" class="last-news__link">→ read more</a>
+                    <a href="<?php the_permalink(); ?>" class="last-news__link link">→ read more</a>
                   </div>
                 </div>
               <?php endwhile; wp_reset_postdata(); ?>

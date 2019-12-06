@@ -1,0 +1,19 @@
+.link
+  position: relative
+  text-decoration: none
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    height: vw(2)
+    opacity: 0.5
+    width: 100%
+    background-color: $tuatara
+    +trans
+  &:hover, &:focus
+    text-decoration: none
+    &::after
+      left: auto
+      right: 0
+      width: 0

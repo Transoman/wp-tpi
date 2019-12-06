@@ -4,10 +4,11 @@
     margin: 0
   a
     color: inherit
-    text-decoration: underline
+    &::after
+      background-color: #fff
+      opacity: 1
     &:hover, &:focus
       color: rgba(#fff, 0.8)
-      text-decoration: none
   &__social
     margin-top: 2.5rem
     & > *:not(:last-child)

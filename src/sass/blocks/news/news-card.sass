@@ -1,0 +1,55 @@
+.news-card
+  position: relative
+  width: 100vw
+  max-width: 100vw
+  margin: 0 calc(50% - 50vw)
+  padding: vw(90) 0
+  +xs-block
+    padding: vw-xs(30) 0 vw-xs(40)
+  &:nth-child(odd)
+    background-color: $gray
+    color: $light-gray
+    +xs-block
+      background-color: #fff
+      background-image: linear-gradient(90deg, $gray 80%, #fff 80%)
+    .news-card
+      &__title
+        color: #fff
+      &__link
+        &::after
+          background-color: $light-gray
+          opacity: 1
+        &:hover
+          color: rgba($light-gray, 0.8)
+  .row
+    align-items: center
+  &__content
+    +col
+    +size(4)
+    +size-xs(8)
+  &__publish
+    display: block
+    margin-bottom: vw(15)
+  &__title
+    margin-bottom: vw(65)
+    a
+      color: inherit
+      &:hover, &:focus
+        opacity: 0.8
+  &__text
+    margin-bottom: vw(35)
+    padding-right: vw(220)
+    +xs-block
+      padding-right: vw-xs(90)
+  &__bottom
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+  &__link
+    color: inherit
+  &__img
+    +col
+    +size(4)
+    +size-xs(8)
+    +xs-block
+      margin-top: vw-xs(20)
