@@ -1,15 +1,10 @@
 <?php
 /**
- * Template part for displaying page content in page.php
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package ith
+ * News
  */
-
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'news-card' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'news-card news-card--strip' ); ?>>
   <div class="container">
     <div class="row">
       <div class="news-card__content">

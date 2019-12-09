@@ -19,6 +19,7 @@
                 "white": "White background",
                 "white_double": "White background and double image",
                 "dark": "Dark background",
+                "dark_reverse": "Dark background and right to left",
                 "dark_double": "Dark background and double image"
             },
             "default_value": [
@@ -30,6 +31,45 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5dedff557c3b4",
+            "label": "Additional Image",
+            "name": "additional_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5dea75716adba",
+                        "operator": "==",
+                        "value": "dark_double"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5dea75716adba",
+                        "operator": "==",
+                        "value": "white_double"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -49,5 +89,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1575646760
+    "modified": 1575880218
 }
