@@ -1,0 +1,59 @@
+/**
+ * WordPress Generated Classes
+ * @see http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+ */
+
+/** Media alignment */
+.alignnone
+  margin-left: 0
+  margin-right: 0
+  max-width: 100%
+  height: auto
+
+.aligncenter
+  display: block
+  margin: (1rem / 2) auto
+  height: auto
+
+.alignleft,
+.alignright
+  margin-bottom: (1rem / 2)
+  height: auto
+
+.alignleft
+  +from(577px)
+    float: left
+    margin-right: 50px
+
+.alignright
+  +from(577px)
+    float: right
+    margin-left: (1rem / 2)
+
+.wp-block-image
+  margin: 1rem 0
+  .alignright
+    +xs-block
+      float: none
+      margin-right: 0
+      margin-left: 0
+
+.wp-block-quote
+  clear: both
+
+.wp-block-columns
+  +xs-block
+    margin-bottom: vw-xs(15)
+
+/** Captions */
+//.wp-caption
+//  @extend .figure;
+//
+//.wp-caption img {
+//  @extend .figure-img;
+//  @extend .img-fluid;
+//}
+//
+//.wp-caption-text {
+//  @extend .figure-caption;
+//}

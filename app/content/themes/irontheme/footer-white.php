@@ -1,6 +1,6 @@
   </div><!-- /.content -->
 
-  <footer class="footer">
+  <footer class="footer footer--white">
     <div class="container">
       <div class="row">
         <div class="footer__copy">Make design work <sup>TM</sup></div>
@@ -41,7 +41,7 @@
         </div>
 
         <a href="<?php echo home_url( '/' ); ?>" class="footer__logo">
-          <img src="<?php echo THEME_URL; ?>/images/general/logo-small.svg" width="100" alt="<?php echo bloginfo( 'name' ); ?>">
+          <img src="<?php echo THEME_URL; ?>/images/general/logo-small-dark.svg" width="100" alt="<?php echo bloginfo( 'name' ); ?>">
         </a>
       </div>
     </div>

@@ -1,0 +1,49 @@
+.article-head
+  margin-bottom: vw(60)
+  padding-top: vw(70)
+  +xs-block
+    margin-bottom: vw-xs(20)
+    padding-top: vw-xs(25)
+  &__publish
+    display: block
+    margin-bottom: vw(10)
+  &__title
+    margin-bottom: 0
+    +fluid-type(10px, 35px)
+
+.article-content
+  @extend .clearfix
+  .alignfull
+    margin-left: calc( -100vw / 2 + 100% / 2 )
+    margin-right: calc( -100vw / 2 + 100% / 2 )
+    max-width: 100vw
+    img
+      width: 100vw
+  .wp-block-image
+    &.alignfull
+      margin-top: vw(80)
+      margin-bottom: vw(80)
+      +xs-block
+        margin-top: vw-xs(20)
+        margin-bottom: vw-xs(25)
+      &:last-child
+        margin-bottom: 0
+
+.article-nav
+  +row-flex
+  margin-top: vw(80)
+  margin-bottom: vw(65)
+  +xs-block
+    margin-top: vw-xs(25)
+  &__left
+    +col
+    +size(4)
+    +size-xs(8)
+    +xs-block
+      margin-bottom: vw-xs(10)
+  &__right
+    +col
+    +size(4)
+    +size-xs(8)
+  &__title
+    margin-bottom: vw(5)

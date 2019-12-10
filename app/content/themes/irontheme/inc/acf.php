@@ -24,3 +24,20 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false
 	));
 }
+
+function register_acf_block_types() {
+
+  // register a testimonial block.
+  acf_register_block_type(array(
+    'name'              => 'ith-quote',
+    'title'             => __('Quote TPI'),
+    'render_template'   => 'template-parts/blocks/quote/quote.php',
+    'category'          => 'formatting',
+    'icon'              => 'admin-comments',
+    'keywords'          => array( 'quote' ),
+  ));
+}
+
+if( function_exists('acf_register_block_type') ) {
+  add_action('acf/init', 'register_acf_block_types');
+}

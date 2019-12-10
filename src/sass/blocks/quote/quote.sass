@@ -1,0 +1,39 @@
+.quote
+  @extend .clearfix
+  clear: both
+  margin: vw(100) 0 vw(110)
+  padding: vw(100) 0
+  background-image: linear-gradient(90deg, #fff 20%, $gray 20%)
+  +xs-block
+    margin: vw-xs(15) 0 vw-xs(15)
+    padding: vw-xs(20) 0 0
+    background-image: linear-gradient($gray 80%, #fff 80%)
+  &.alignfull
+    .quote
+      &__container
+        @extend .container
+  .row
+    align-items: center
+    +xs-block
+      flex-direction: column-reverse
+  &__image
+    +col
+    +size(3)
+    +size-xs(8)
+  &__blockquote
+    +col
+    +size(5)
+    +size-xs(8)
+    padding-left: vw(220)
+    color: #fff
+    +xs-block
+      padding-left: 0
+      margin-bottom: vw-xs(20)
+      text-align: center
+  &__text
+    font-family: $dms-font
+    +fluid-type(10px, 35px)
+  &__author
+    display: block
+    margin-top: vw(45)
+    +fluid-type(7px, 26px)

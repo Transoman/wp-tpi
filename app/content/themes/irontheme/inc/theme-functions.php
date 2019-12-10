@@ -98,6 +98,9 @@ if ( ! function_exists( 'ith_setup' ) ) :
     add_image_size( 'ith-last-news', 395, 395, true );
     add_image_size( 'ith-news-card-large', 835, 450, true );
     add_image_size( 'ith-news-card-double', 395, 450, true );
+    add_image_size( 'ith-news-quote', 615, 460, true );
+
+    add_theme_support( 'align-wide' );
   }
 endif;
 add_action( 'after_setup_theme', 'ith_setup' );
@@ -216,3 +219,13 @@ add_filter( 'excerpt_length', function(){
 add_filter('excerpt_more', function($more) {
   return '...';
 });
+
+/**
+ * Added custom image sizes in Gutenberg
+ */
+add_filter( 'image_size_names_choose','ith_custom_image_sizes' );
+function ith_custom_image_sizes( $sizes ) {
+  return array_merge( $sizes, array(
+    'ith-news-card-large' => __( 'Custom Large' )
+  ) );
+}

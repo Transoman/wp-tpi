@@ -32,3 +32,15 @@
       text-align: left
     img
       max-width: vw(100)
+  &--white
+    background-color: #fff
+    color: $tuatara
+    .footer
+      &__contact-block
+        color: inherit
+        a
+          &::after
+            background-color: $tuatara
+            opacity: 0.8
+          &:hover, &:focus
+            color: $tuatara

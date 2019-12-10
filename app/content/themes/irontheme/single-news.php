@@ -15,23 +15,35 @@ get_header();
 
     <?php
     while ( have_posts() ) :
-      the_post();
+      the_post(); ?>
 
-      the_content();
+      <div class="article-head">
+        <time datetime="<?php echo get_the_time( 'Y-m-d' ); ?>" class="article-head__publish"><?php echo get_the_date(); ?></time>
+        <h1 class="article-head__title"><?php the_title(); ?></h1>
+      </div>
 
-      the_post_navigation();
+      <div class="article-content">
+        <?php the_content(); ?>
+      </div>
 
-      // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) :
-        comments_template();
-      endif;
-
-    endwhile; // End of the loop.
+    <?php endwhile; // End of the loop.
     ?>
+
+      <div class="article-nav">
+        <div class="article-nav__left">
+          <a href="<?php echo home_url( '/' ); ?>news">←	Back to news & thoughts</a>
+        </div>
+        <?php $next_post = get_next_post();
+        if (!empty($next_post)): ?>
+          <div class="article-nav__right">
+            <h3 class="article-nav__title">Next article</h3>
+            <a href="<?php echo get_permalink( $next_post ); ?>">→ <?php echo esc_html($next_post->post_title); ?></a>
+          </div>
+        <?php endif; ?>
+      </div>
 
     </main><!-- #main -->
   </div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+get_footer( 'white' );
