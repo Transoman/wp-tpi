@@ -37,10 +37,13 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "imagesloaded": "^4.1.4",
     "imask": "^5.2.1",
     "jquery": "^3.4.1",
+    "jquery-bridget": "^2.0.1",
     "jquery-parallax.js": "^1.5.0",
     "jquery-popup-overlay": "^2.1.4",
+    "masonry-layout": "^4.2.2",
     "node-snackbar": "^0.1.16",
     "normalize.css": "^8.0.1",
     "svg4everybody": "^2.1.9"

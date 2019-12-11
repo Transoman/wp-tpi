@@ -143,7 +143,13 @@ add_action( 'widgets_init', 'ith_widgets_init' );
  */
 function ith_scripts() {
   wp_enqueue_style( 'ith-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'ith-justifiedGallery', '//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css' );
 
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', false, null, false );
+  wp_enqueue_script( 'jquery' );
+
+  wp_enqueue_script( 'ith-justifiedGallery-script', 'https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js', array( 'jquery' ), '', true );
   wp_enqueue_script( 'ith-main', get_template_directory_uri() . '/js/common.js', array(), '', true);
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

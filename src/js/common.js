@@ -1,14 +1,20 @@
 'use strict';
 
-global.jQuery = require('jquery');
+// global.jQuery = require('jquery');
 let svg4everybody = require('svg4everybody'),
   popup = require('jquery-popup-overlay'),
   iMask = require('imask'),
   parallax = require('jquery-parallax.js'),
   Snackbar = require('node-snackbar'),
-  fancybox = require('@fancyapps/fancybox');
+  fancybox = require('@fancyapps/fancybox'),
+  jQueryBridget = require('jquery-bridget'),
+  Masonry = require('masonry-layout'),
+  imagesLoaded = require('imagesloaded');
 
 jQuery(document).ready(function($) {
+  jQueryBridget( 'masonry', Masonry, $ );
+  // jQueryBridget( 'imagesLoaded', imagesLoaded, $ );
+
   // Toggle nav menu
   let toggleNav = function () {
     let toggle = $('.nav-toggle');
@@ -133,11 +139,62 @@ jQuery(document).ready(function($) {
     });
   };
 
+  let checkColumn = function() {
+    let column;
+
+    if ($(window).width() < 577) {
+      column = 2;
+    }
+    else {
+      column = 3
+    }
+
+    return column;
+  };
+
+  let grid = $('.portfolio').masonry({
+    itemSelector: '.portfolio__item',
+    gutter: 0,
+    columnWidth: Math.floor($(".portfolio").width() / checkColumn())
+  });
+
+  function masonryProjectResize() {
+    if ($('.portfolio').length) {
+        let defaultSize = Math.floor($(".portfolio").width() / checkColumn());
+        let projectDefault = $('.portfolio__item');
+        let projectMasonryTall = $('.portfolio__item--tall');
+        let gutter = $(window).width() > 576 ? 50 : 30;
+
+        if ($(window).width() > 576) {
+          projectDefault.css('height', defaultSize);
+          projectMasonryTall.css('height', defaultSize * 2 + gutter);
+        }
+        else {
+          projectDefault.css('height', defaultSize - gutter);
+          projectMasonryTall.css('height', defaultSize * 2 + gutter);
+        }
+    }
+  }
+
+  grid.imagesLoaded().progress( function() {
+    grid.masonry('layout');
+  });
+
   toggleNav();
   toggleGIT();
   initModal();
   // inputMask();
   contactForm();
+  masonryProjectResize();
+
+  $(window).resize(function() {
+    masonryProjectResize();
+    $('.portfolio').masonry({
+      itemSelector: '.portfolio__item',
+      gutter: 0,
+      columnWidth: Math.floor($(".portfolio").width() / checkColumn())
+    });
+  });
 
   // SVG
   svg4everybody({});
