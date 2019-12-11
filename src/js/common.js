@@ -13,7 +13,6 @@ let svg4everybody = require('svg4everybody'),
 
 jQuery(document).ready(function($) {
   jQueryBridget( 'masonry', Masonry, $ );
-  // jQueryBridget( 'imagesLoaded', imagesLoaded, $ );
 
   // Toggle nav menu
   let toggleNav = function () {
@@ -33,20 +32,17 @@ jQuery(document).ready(function($) {
     let toggle = $('.get-in-touch_open');
     let git = $('.get-in-touch');
     let close = $('.get-in-touch__close');
-    // let body = $('body');
 
     toggle.on('click', function (e) {
       e.preventDefault();
       toggle.toggleClass('is-active');
       git.toggleClass('open');
-      // body.toggleClass('nav-open');
     });
 
     close.on('click', function (e) {
       e.preventDefault();
       toggle.removeClass('is-active');
       git.removeClass('open');
-      // body.toggleClass('nav-open');
     });
   };
 
@@ -180,12 +176,82 @@ jQuery(document).ready(function($) {
     grid.masonry('layout');
   });
 
+  // Youtube Video Lazy Load
+  function findVideos() {
+    var videos = document.querySelectorAll('.video');
+
+    for (var i = 0; i < videos.length; i++) {
+      setupVideo(videos[i]);
+    }
+  }
+
+  function setupVideo(video) {
+    var link = video.querySelector('.video__link');
+    var button = video.querySelector('.video__button');
+    var text = video.querySelector('p');
+    var id = parseMediaURL(link);
+
+    video.addEventListener('click', function() {
+      if (!this.classList.contains('video--dummy')) {
+        var iframe = createIframe(id);
+
+        link.remove();
+        button.remove();
+        if (text) {
+          text.remove();
+        }
+        video.appendChild(iframe);
+      }
+    });
+
+    var source = "https://img.youtube.com/vi/"+ id +"/maxresdefault.jpg";
+
+    if (!video.querySelector('.video__media')) {
+      var image = new Image();
+      image.src = source;
+      image.classList.add('video__media');
+
+      image.addEventListener('load', function() {
+        link.append( image );
+      } (video) );
+    }
+
+    link.removeAttribute('href');
+    video.classList.add('video--enabled');
+  }
+
+  function parseMediaURL(media) {
+    var regexp = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/;
+    var url = media.href;
+    var match = url.match(regexp);
+
+    return match[5];
+  }
+
+  function createIframe(id) {
+    var iframe = document.createElement('iframe');
+
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('allow', 'autoplay');
+    iframe.setAttribute('src', generateURL(id));
+    iframe.classList.add('video__media');
+
+    return iframe;
+  }
+
+  function generateURL(id) {
+    var query = '?rel=0&showinfo=0&autoplay=1';
+
+    return 'https://www.youtube.com/embed/' + id + query;
+  }
+
   toggleNav();
   toggleGIT();
   initModal();
   // inputMask();
   contactForm();
   masonryProjectResize();
+  findVideos();
 
   $(window).resize(function() {
     masonryProjectResize();
