@@ -99,6 +99,7 @@ if ( ! function_exists( 'ith_setup' ) ) :
     add_image_size( 'ith-news-card-large', 835, 450, true );
     add_image_size( 'ith-news-card-double', 395, 450, true );
     add_image_size( 'ith-news-quote', 615, 460, true );
+    add_image_size( 'ith-gallery', 835, 740, true );
 
     add_theme_support( 'align-wide' );
   }

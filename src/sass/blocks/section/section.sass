@@ -3,9 +3,6 @@
     +xs-block
       padding-bottom: 0
   &-video
-    margin-left: calc( -100vw / 2 + 100% / 2 )
-    margin-right: calc( -100vw / 2 + 100% / 2 )
-    max-width: 100vw
     height: 100vh
     padding: 0
     +xs-block
@@ -13,6 +10,11 @@
     .video
       +from(577px)
         padding-bottom: 100vh
+  &-video-v2
+    padding-bottom: vw(50)
+    +xs-block
+      padding-top: vw-xs(20)
+      padding-bottom: vw-xs(30)
   &-text
     position: relative
     +from(577px)
@@ -43,6 +45,21 @@
       +col
       +size(4)
       +size-xs(8)
+    &--v2
+      padding-bottom: vw(340)
+      +from(577px)
+        padding-top: vw(100)
+      +xs-block
+        padding-bottom: 0
+        .s-text
+          &__right
+            margin-bottom: vw-xs(-70)
+      &::before
+        top: auto
+        bottom: vw(85)
+        height: vw(200)
+        +xs-block
+          display: none
   &-blockquote
     margin-left: calc( -100vw / 2 + 100% / 2 )
     margin-right: calc( -100vw / 2 + 100% / 2 )
@@ -77,8 +94,22 @@
       font-family: $main-font
       +fluid-type(7px, 26px)
       font-style: normal
+  &-quote
+    +xs-block
+      padding-top: vw-xs(95) !important
+      .quote
+        &__image
+          width: auto
+          margin-left: -15px
+          margin-right: -15px
   &-image
     margin-left: calc( -100vw / 2 + 100% / 2 )
     margin-right: calc( -100vw / 2 + 100% / 2 )
     img
       display: block
+  &-gallery
+    +row-flex
+    &__item
+      +col
+      +size(4)
+      +size-xs(4)

@@ -24,7 +24,7 @@ get_header();
 
           if ( get_row_layout() == 'video' ): ?>
 
-          <section class="s-video">
+          <section class="s-video alignfull">
             <div class="video">
               <a href="<?php echo esc_url(get_sub_field('video_link')); ?>" class="video__link">
                 <?php echo wp_get_attachment_image( get_sub_field( 'video_poster' ), 'full', '', array('class' => 'video__media') ); ?>
