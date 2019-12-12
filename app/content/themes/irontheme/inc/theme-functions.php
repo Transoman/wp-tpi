@@ -144,7 +144,6 @@ add_action( 'widgets_init', 'ith_widgets_init' );
  */
 function ith_scripts() {
   wp_enqueue_style( 'ith-style', get_stylesheet_uri() );
-  wp_enqueue_style( 'ith-justifiedGallery', '//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css' );
 
   wp_deregister_script( 'jquery' );
   wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', false, null, false );
