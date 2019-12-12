@@ -36,7 +36,13 @@ switch ($post_type) {
 
         <div class="news-card__bottom">
           <a href="<?php the_permalink(); ?>" class="news-card__link link">→ read more</a>
-          <a href="#" class="news-card__link link">→ share this article</a>
+          <div class="share">
+            <a href="#" class="share__toggle link">→ share this article</a>
+            <div class="share__items">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_the_permalink()); ?>&t=<?php echo esc_html(get_the_title()); ?>" onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); return false" class="share__link link" title="Share on Facebook" target="_parent">Facebook</a>
+              <a href="https://twitter.com/share?url=<?php echo esc_url(get_the_permalink()); ?>&text=<?php echo esc_html(get_the_title()); ?>" onclick="window.open(this.href, this.title, 'toolbar=0, status=0, width=548, height=325'); return false" class="share__link link" title="Share on Twitter" target="_parent">Twitter</a>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -55,11 +55,13 @@
       +xs-block
         width: calc(50% - 30px)
         & + .portfolio__item:not(.portfolio__item--tall):not(:last-child)
-          width: calc(50% - 30px)
+          //width: calc(50% - 30px)
     &--tall
       width: calc(33.33% - 50px)
       +xs-block
         width: calc(50% - 30px)
+        & + .portfolio__item:not(.portfolio__item--tall):not(:last-child)
+          width: calc(50% - 30px)
     &--color-dark
       .portfolio
         &__content

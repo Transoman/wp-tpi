@@ -74,6 +74,23 @@ jQuery(document).ready(function($) {
 
   $('.parallax-bg').parallax();
 
+  // Share
+  let shareToggle = function() {
+    let toggle = $('.share__toggle');
+
+    toggle.click(function(e) {
+      e.preventDefault();
+      $(this).parent().addClass('active');
+    });
+
+    $(document).mouseup(function (e) {
+      let div = $(".share");
+      if (!div.is(e.target) && div.has(e.target).length === 0) {
+        div.removeClass('active');
+      }
+    });
+  };
+
   // Contact form
   let contactForm = function() {
     $('.wpcf7').each(function(i, el) {
@@ -167,7 +184,7 @@ jQuery(document).ready(function($) {
         }
         else {
           projectDefault.css('height', defaultSize - gutter);
-          projectMasonryTall.css('height', defaultSize * 2 + gutter);
+          projectMasonryTall.css('height', defaultSize * 2 - gutter);
         }
     }
   }
@@ -252,6 +269,7 @@ jQuery(document).ready(function($) {
   contactForm();
   masonryProjectResize();
   findVideos();
+  shareToggle();
 
   $(window).resize(function() {
     masonryProjectResize();

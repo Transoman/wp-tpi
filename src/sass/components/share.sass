@@ -1,0 +1,25 @@
+.share
+  position: relative
+  width: 100%
+  padding-bottom: 2px
+  overflow: hidden
+  &.active
+    .share
+      &__toggle
+        opacity: 0
+        visibility: hidden
+      &__items
+        transform: translateX(0)
+        opacity: 1
+  &__items
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    display: flex
+    align-items: center
+    transform: translateX(-100%)
+    opacity: 0
+    +trans
+  &__link
+    margin-right: vw(40)
