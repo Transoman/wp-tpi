@@ -7,7 +7,7 @@ let settings = {
   offset: '50px', /* gutter width px || % || rem */
   mobileFirst: false, /* mobileFirst ? 'min-width' : 'max-width' */
   container: {
-    maxWidth: '91.14vw', /* max-width оn very large screen */
+    maxWidth: '89.14vw', /* max-width оn very large screen */
     fields: '15px' /* side fields */
   },
   breakPoints: {
