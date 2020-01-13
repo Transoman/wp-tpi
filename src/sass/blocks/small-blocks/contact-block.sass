@@ -2,8 +2,10 @@
   color: #fff
   p
     margin: 0
+    +xs-block
+      +fluid-type(12px, 23px)
     &:first-child
-      +fluid-type(7px, 23px)
+      +fluid-type(12px, 23px)
   a
     color: inherit
     &::after
@@ -13,7 +15,12 @@
       color: rgba(#fff, 0.8)
   &__social
     margin-top: 2.5rem
+    +xs-block
+      margin-top: vw-xs(10)
     & > *:not(:last-child)
       margin-right: vw(15)
       +xs-block
         margin-right: vw-xs(5)
+    .link
+      +xs-block
+        +fluid-type(12px, 26px)

@@ -35,7 +35,7 @@ get_header();
           }
           ?>
 
-          <a href="<?php the_permalink(); ?>" class="portfolio__item<?php echo $type ?: ''; echo get_field( 'color_card_text' ) == 'dark' ? ' portfolio__item--color-dark' : ''; ?>">
+          <a href="<?php the_permalink(); ?>" class="portfolio__item<?php echo $type ?: ''; ?>">
             <?php the_post_thumbnail( 'full' ); ?>
             <div class="portfolio__content">
               <h3 class="portfolio__title"><?php the_title(); ?></h3>

@@ -193,24 +193,33 @@ jQuery(document).ready(function($) {
     grid.masonry('layout');
   });
 
+  let disableFirstClickPortfolio = function() {
+    if ($(window).width() < 568) {
+      $('.portfolio__item').one("click", false);
+    }
+    else {
+      $('.portfolio__item').unbind("click");
+    }
+  };
+
   // Youtube Video Lazy Load
   function findVideos() {
-    var videos = document.querySelectorAll('.video');
+    let videos = document.querySelectorAll('.video');
 
-    for (var i = 0; i < videos.length; i++) {
+    for (let i = 0; i < videos.length; i++) {
       setupVideo(videos[i]);
     }
   }
 
   function setupVideo(video) {
-    var link = video.querySelector('.video__link');
-    var button = video.querySelector('.video__button');
-    var text = video.querySelector('p');
-    var id = parseMediaURL(link);
+    let link = video.querySelector('.video__link');
+    let button = video.querySelector('.video__button');
+    let text = video.querySelector('p');
+    let id = parseMediaURL(link);
 
     video.addEventListener('click', function() {
       if (!this.classList.contains('video--dummy')) {
-        var iframe = createIframe(id);
+        let iframe = createIframe(id);
 
         link.remove();
         button.remove();
@@ -221,10 +230,10 @@ jQuery(document).ready(function($) {
       }
     });
 
-    var source = "https://img.youtube.com/vi/"+ id +"/maxresdefault.jpg";
+    let source = "https://img.youtube.com/vi/"+ id +"/maxresdefault.jpg";
 
     if (!video.querySelector('.video__media')) {
-      var image = new Image();
+      let image = new Image();
       image.src = source;
       image.classList.add('video__media');
 
@@ -238,15 +247,15 @@ jQuery(document).ready(function($) {
   }
 
   function parseMediaURL(media) {
-    var regexp = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/;
-    var url = media.href;
-    var match = url.match(regexp);
+    let regexp = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/;
+    let url = media.href;
+    let match = url.match(regexp);
 
     return match[5];
   }
 
   function createIframe(id) {
-    var iframe = document.createElement('iframe');
+    let iframe = document.createElement('iframe');
 
     iframe.setAttribute('allowfullscreen', '');
     iframe.setAttribute('allow', 'autoplay');
@@ -257,7 +266,7 @@ jQuery(document).ready(function($) {
   }
 
   function generateURL(id) {
-    var query = '?rel=0&showinfo=0&autoplay=1';
+    let query = '?rel=0&showinfo=0&autoplay=1';
 
     return 'https://www.youtube.com/embed/' + id + query;
   }
@@ -270,6 +279,7 @@ jQuery(document).ready(function($) {
   masonryProjectResize();
   findVideos();
   shareToggle();
+  disableFirstClickPortfolio();
 
   $(window).resize(function() {
     masonryProjectResize();
@@ -278,6 +288,8 @@ jQuery(document).ready(function($) {
       gutter: 0,
       columnWidth: Math.floor($(".portfolio").width() / checkColumn())
     });
+
+    disableFirstClickPortfolio();
   });
 
   // SVG

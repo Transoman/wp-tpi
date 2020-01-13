@@ -28,7 +28,7 @@
     padding-right: vw(220)
     +xs-block
       margin-bottom: vw-xs(15)
-      padding-right: vw-xs(90)
+      padding-right: 0
   &__bottom
     display: flex
     flex-direction: column
@@ -70,6 +70,8 @@
   &--dark
     background-image: linear-gradient(90deg, $gray 80%, #fff 80%)
     color: $light-gray
+    +xs-block
+      background-image: linear-gradient(180deg, $gray 75%, #fff 75%)
     .news-card
       &__title
         color: #fff

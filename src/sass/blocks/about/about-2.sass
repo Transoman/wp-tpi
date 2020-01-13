@@ -3,7 +3,8 @@
   background-image: linear-gradient(to right, #fff, #fff 30%, $gray 30%)
   +xs-block
     background-image: linear-gradient(#fff, #fff 30%, $gray 30%)
-    padding-bottom: vw-xs(120)
+    padding-top: 0
+    padding-bottom: vw-xs(35)
   .container
     position: relative
   .row
@@ -14,6 +15,8 @@
     +size(3)
     +size-xs(8)
     color: #fff
+    +xs-block
+      padding-right: vw-xs(80)
     .section-title
       margin-bottom: vw(40)
       color: #fff
@@ -27,14 +30,14 @@
       margin-top: vw(75)
       +xs-block
         position: absolute
-        top: 0
+        top: vw-xs(5)
         right: 0
         margin: 0
         flex-direction: column
         .icons-box
           &__item
             padding: 0
-            margin-bottom: vw-xs(20)
+            margin-bottom: vw-xs(25)
             &:last-child
               margin-bottom: 0
 
