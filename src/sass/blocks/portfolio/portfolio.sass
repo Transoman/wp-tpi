@@ -35,9 +35,14 @@
       left: 0
       z-index: 1
       background-color: rgba(#000, 0.7)
+      opacity: 0
+      +trans
     &:hover
+      &::before
+        opacity: 1
       img
         transform: scale(1.05)
+        filter: grayscale(100)
       .portfolio
         &__title, &__tag
           transform: translateY(0)
@@ -52,7 +57,7 @@
       height: 100%
       object-fit: cover
       pointer-events: none
-      filter: grayscale(100)
+      filter: grayscale(0)
       +trans(all, 1s)
       +xs-block
         max-width: 150%
@@ -74,13 +79,13 @@
     color: #fff
   &__title
     margin: 0
-    +fluid-type(17px, 75px)
+    +fluid-type(17px, 60px)
     color: #fff
     transform: translateY(vw(30))
     opacity: 0
     +trans
   &__tag
-    +fluid-type(10px, 45px)
+    +fluid-type(10px, 35px)
     font-weight: 400
     transform: translateY(vw(30))
     opacity: 0
